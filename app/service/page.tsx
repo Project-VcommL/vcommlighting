@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function ServicePage() {
     return (
-        <section className="py-16 sm:py-24 bg-transparent text-gray-200">
+        <section className="py-16 sm:py-24 bg-[#08111d] text-gray-200">
             <div className="min-h-[70vh] flex flex-col items-center justify-center p-8 text-center pt-16 sm:pt-24">
 
                 {/* หัวข้อหลัก */}

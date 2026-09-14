@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function ProductsPage() {
     return (
-        <section className="py-16 sm:py-24 bg-transparent text-gray-200">
+        <section className="py-16 sm:py-24 bg-[#08111d] text-gray-200">
             <div className="min-h-[70vh] flex flex-col items-center justify-center px-8 pb-8 pt-16 sm:pt-24 text-center">
                 <header className="text-center mb-12 animate-fadeInUp">
                     <h1 className="text-4xl sm:text-5xl font-extrabold text-neon-blue tracking-tight drop-shadow-[0_0_10px_rgba(0,243,255,0.6)]">                    หน้าสินค้า (Products)

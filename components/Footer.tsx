@@ -17,7 +17,7 @@ export default function Footer() {
     const lineLink = `https://line.me/ti/p/@${lineId}`; // รูปแบบลิงก์ที่แนะนำสำหรับ LINE OA
 
     return (
-        <footer className="bg-[#006666] dark:!bg-[#003333] text-gray-100 dark:text-gray-300 pt-10 pb-6 border-t border-gray-300 dark:border-neon-green shadow-none dark:shadow-[0_-5px_15px_rgba(57,255,20,0.2)]">
+        <footer className="bg-teal dark:bg-teal text-gray-100 dark:text-gray-300 pt-10 pb-6 border-t border-gray-300 dark:border-neon-green shadow-none dark:shadow-[0_-5px_15px_rgba(52,211,153,0.2)]">
             <div className="container mx-auto px-4">
                 {/* ส่วนบน: โลโก้, ลิงก์, ข้อมูลติดต่อ */}
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8 pb-8 border-b border-gray-800">

@@ -4,37 +4,57 @@
 :root {
   /* Light Mode (Default) */
   --background: #ffffff;
-  /* Pure White as requested */
   --foreground: #1f2937;
-  /* Gray 800 - Dark Grey Text */
 
-  /* Friendly Warm Colors (Light Mode) */
-  --neon-blue: #2563eb;
-  /* Darker Blue for contrast on light bg */
-  --neon-pink: #d97706;
-  /* Darker Amber */
+  /* Primary Colors (Light Mode) */
+  --neon-blue: #1e40af;
+  --neon-pink: #dc2626;
   --neon-green: #059669;
-  /* Darker Emerald */
   --neon-yellow: #d97706;
-  /* Warm Yellow/Orange */
+
+  /* Secondary Brand Colors */
+  --teal: #006666;
+  --teal-light: #00a3a3;
+  --navy-dark: #0c2340;
+
+  /* Neutral Grays */
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+  --text-tertiary: #9ca3af;
+  --bg-light: #f9fafb;
+  --bg-lighter: #f3f4f6;
+
+  /* Border Colors */
+  --border-light: #e5e7eb;
+  --border-default: #d1d5db;
 }
 
 .dark {
   /* Dark Mode */
-  --background: #333333;
-  /* Neutral Grey as requested */
+  --background: #0a0e27;
   --foreground: #e0e0e0;
-  /* Light Text */
 
-  /* Friendly Warm Colors (Dark Mode) */
+  /* Primary Colors (Dark Mode) */
   --neon-blue: #60a5fa;
-  /* Soft Blue */
-  --neon-pink: #f59e0b;
-  /* Warm Amber */
+  --neon-pink: #f87171;
   --neon-green: #34d399;
-  /* Soft Emerald */
   --neon-yellow: #fbbf24;
-  /* Warm Yellow */
+
+  /* Secondary Brand Colors */
+  --teal: #003333;
+  --teal-light: #005555;
+  --navy-dark: #1e3a5f;
+
+  /* Neutral Grays */
+  --text-primary: #e0e0e0;
+  --text-secondary: #a3a3a3;
+  --text-tertiary: #737373;
+  --bg-light: #1a1f3a;
+  --bg-lighter: #242d4a;
+
+  /* Border Colors */
+  --border-light: #374151;
+  --border-default: #4b5563;
 }
 
 @theme inline {
@@ -43,22 +63,40 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 
+  /* Primary Neon Colors */
   --color-neon-blue: var(--neon-blue);
   --color-neon-pink: var(--neon-pink);
   --color-neon-green: var(--neon-green);
   --color-neon-yellow: var(--neon-yellow);
+
+  /* Brand Colors */
+  --color-teal: var(--teal);
+  --color-teal-light: var(--teal-light);
+  --color-navy-dark: var(--navy-dark);
+
+  /* Text Colors */
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-tertiary: var(--text-tertiary);
+
+  /* Background Colors */
+  --color-bg-light: var(--bg-light);
+  --color-bg-lighter: var(--bg-lighter);
+
+  /* Border Colors */
+  --color-border-light: var(--border-light);
+  --color-border-default: var(--border-default);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: 'Inter', sans-serif;
-  /* Switching to a friendly sans like Inter if available, or just letting default sans take over neatly */
+  font-family: var(--font-geist-sans, 'Geist Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
 }
 
 @layer utilities {
+  /* ============ Color Utilities ============ */
 
-  /* Removed aggressive text-shadows for a cleaner, flatter look */
   .text-neon-blue {
     color: var(--neon-blue);
   }
@@ -71,10 +109,156 @@ body {
     color: var(--neon-green);
   }
 
-  /* Removed aggressive box-shadows (glows) */
+  .text-neon-yellow {
+    color: var(--neon-yellow);
+  }
+
+  .bg-neon-blue {
+    background-color: var(--neon-blue);
+  }
+
+  .bg-neon-green {
+    background-color: var(--neon-green);
+  }
+
+  .bg-teal {
+    background-color: var(--teal);
+  }
+
+  .border-neon-blue {
+    border-color: var(--neon-blue);
+  }
+
+  .border-neon-green {
+    border-color: var(--neon-green);
+  }
+
+  .border-teal {
+    border-color: var(--teal);
+  }
+
+  /* ============ Typography Scale ============ */
+
+  .heading-h1 {
+    font-size: 3rem;
+    line-height: 3.5rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--neon-blue);
+  }
+
+  @media (min-width: 768px) {
+    .heading-h1 {
+      font-size: 3.75rem;
+      line-height: 4.5rem;
+    }
+  }
+
+  .heading-h2 {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    color: var(--text-primary);
+  }
+
+  @media (min-width: 768px) {
+    .heading-h2 {
+      font-size: 3rem;
+      line-height: 3.5rem;
+    }
+  }
+
+  .heading-h3 {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--text-primary);
+  }
+
+  .heading-h4 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .text-subtitle {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+  }
+
+  .text-body {
+    font-size: 1rem;
+    line-height: 1.625rem;
+    font-weight: 400;
+    color: var(--text-primary);
+  }
+
+  .text-body-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 400;
+    color: var(--text-secondary);
+  }
+
+  .text-caption {
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: 500;
+    color: var(--text-tertiary);
+    letter-spacing: 0.025em;
+  }
+
+  /* ============ Legacy Compatibility ============ */
+
+  .page-title {
+    font-size: 3rem;
+    line-height: 3.5rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--neon-blue);
+    text-shadow: 0 0 10px rgba(96, 165, 250, 0.3);
+  }
+
+  @media (min-width: 768px) {
+    .page-title {
+      font-size: 3.75rem;
+      line-height: 4.5rem;
+    }
+  }
+
+  .section-title {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    color: var(--text-primary);
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  @media (min-width: 768px) {
+    .section-title {
+      font-size: 3rem;
+      line-height: 3.5rem;
+    }
+  }
+
+  .body-text {
+    font-size: 1rem;
+    line-height: 1.625rem;
+    font-weight: 400;
+    color: var(--text-primary);
+  }
+
+  /* ============ Box Utilities ============ */
+
   .box-neon-blue {
     border: 1px solid var(--neon-blue);
-    /* No shadow or very subtle */
   }
 
   .box-neon-pink {
@@ -85,54 +269,7 @@ body {
     border: 1px solid var(--neon-green);
   }
 
-  /* Typography Standardization */
-  .page-title {
-    font-size: 2.25rem;
-    /* text-4xl */
-    line-height: 2.5rem;
-    font-weight: 800;
-    /* font-extrabold */
-    margin-bottom: 1.5rem;
-    /* mb-6 */
-    color: var(--neon-blue);
-    text-shadow: 0 0 10px rgba(0, 243, 255, 0.6);
-  }
-
-  @media (min-width: 768px) {
-    .page-title {
-      font-size: 3rem;
-      /* md:text-5xl */
-      line-height: 1;
-    }
-  }
-
-  .section-title {
-    font-size: 1.875rem;
-    /* text-3xl */
-    line-height: 2.25rem;
-    font-weight: 700;
-    /* font-bold */
-    margin-bottom: 1.5rem;
-    /* mb-6 */
-    padding-bottom: 0.5rem;
-    /* pb-2 */
-    border-bottom-width: 1px;
-    letter-spacing: -0.025em;
-    /* tracking-tight */
-  }
-
-  .body-text {
-    font-size: 1.125rem;
-    /* text-lg */
-    line-height: 1.75;
-    /* leading-relaxed (1.625 is strict relaxed in tailwind, but 1.75 is often better for reading) */
-    color: #d1d5db;
-    /* text-gray-300 */
-    margin-bottom: 1rem;
-  }
-}
-
-@layer utilities {
+  /* ============ Animations ============ */
 
   /* Keyframes สำหรับ Fade In Up */
   @keyframes fadeInUp {
@@ -151,7 +288,6 @@ body {
   .animate-fadeInUp {
     animation: fadeInUp 1s ease-out forwards;
     opacity: 0;
-    /* เริ่มต้นด้วยความโปร่งใส 0 */
   }
 
   /* Utility Class สำหรับการหน่วงเวลา (Delay) */
@@ -162,19 +298,14 @@ body {
   .animate-delay-500 {
     animation-delay: 0.5s;
   }
-}
-
-@layer utilities {
 
   /* --- Keyframes สำหรับ Logo Slider --- */
   @keyframes slide {
     from {
       transform: translateX(0);
-      /* เริ่มต้นที่ตำแหน่ง 0 */
     }
 
     to {
-      /* เลื่อนไปทางซ้ายเท่ากับความกว้างของโลโก้ชุดแรก (50%) */
       transform: translateX(-50%);
     }
   }
@@ -182,8 +313,6 @@ body {
   /* Utility Class สำหรับ Logo Slider Animation */
   .animate-slide {
     animation: slide 30s linear infinite;
-    /* 30s คือความเร็ว, linear คือความสม่ำเสมอ, infinite คือทำซ้ำไม่สิ้นสุด */
     width: max-content;
-    /* สำคัญ: ต้องกว้างพอที่จะบรรจุโลโก้ซ้ำกัน 2 ชุด */
   }
 }

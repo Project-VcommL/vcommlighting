@@ -5,8 +5,6 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useI18n } from '../hooks/use-i18n';
-import { useTheme } from 'next-themes'; // Import useTheme
-import { Sun, Moon } from 'lucide-react'; // Import Icons
 
 // Menu Items Keys matching json
 const menuItems = ['home', 'about', 'products', 'service', 'case'] as const;
@@ -39,8 +37,7 @@ interface HeaderProps {
 
 
 export default function Header({ isMenuOpen, toggleMenu }: HeaderProps) {
-    const { t, locale, toggleLocale } = useI18n(); // Global Hook
-    const { theme, setTheme } = useTheme();
+    const { t } = useI18n();
     const [isMounted, setIsMounted] = useState(false);
 
     useEffect(() => {
@@ -51,10 +48,6 @@ export default function Header({ isMenuOpen, toggleMenu }: HeaderProps) {
         'fixed top-0 left-0 w-full z-50 transition-all duration-300 backdrop-blur-md bg-white/10 border-b border-white/20 shadow-lg';
 
     const toggleMenuLabel = isMounted ? t('header.toggleMenu') : 'Header Menu';
-    const langToggleLabel = isMounted
-        ? (locale === 'en' ? t('header.switchToThai') : t('header.switchToEnglish'))
-        : (locale === 'en' ? 'Switch to Thai' : 'Switch to English');
-
 
     return (
         <header className={headerClass}>
@@ -74,39 +67,21 @@ export default function Header({ isMenuOpen, toggleMenu }: HeaderProps) {
 
                 {/* เมนูหลัก (Desktop) */}
                 <nav className="hidden md:flex items-center space-x-6">
-                    {/* แสดงลิงก์เมนู 5 รายการแรก (home, about, products, service, case) */}
-                    {menuItems.slice(0, 5).map((item) => (
+                    {['HOME', 'ABOUT US', 'PRODUCTS', 'CASE COLLECTION', 'CONTACT US'].map((item) => (
                         <Link
                             key={item}
-                            href={`/${item === 'home' ? '' : item}`}
-                            className="text-[#FFA500] hover:text-blue-500 dark:hover:text-yellow-400 transition-all font-semibold uppercase text-sm tracking-widest"
-                        // Apply text shadow only in dark mode via style or class if possible. simpler to remove inline style and use class.
+                            href={item === 'HOME' ? '/' : item === 'ABOUT US' ? '/about' : item === 'PRODUCTS' ? '/products' : item === 'CASE COLLECTION' ? '/case' : item === 'CONTACT US' ? '/contract' : '/'}
+                            className="text-neon-yellow hover:text-neon-blue dark:hover:text-yellow-400 transition-all font-semibold uppercase text-sm tracking-widest"
                         >
-                            {t(`header.${item}`)}
+                            {item}
                         </Link>
                     ))}
-
-                    {/* ตัวสลับภาษา (Desktop) */}
-                    <button
-                        onClick={toggleLocale}
-                        type="button"
-                        className="flex items-center space-x-2 p-2 rounded-full hover:bg-white/20 transition-colors text-[#FFA500]"
-                        aria-label={langToggleLabel}
+                    <Link
+                        href="#"
+                        className="bg-neon-green hover:bg-neon-green text-white text-xs font-semibold px-4 py-2 rounded transition duration-200 shadow-lg shadow-green-950/50"
                     >
-                        <GlobeIcon className="text-xl w-5 h-5 text-[#FFA500]" />
-                        <span className="text-sm font-bold text-[#FFA500]">
-                            {locale === 'en' ? 'TH' : 'EN'}
-                        </span>
-                    </button>
-
-                    {/* Theme Toggle (Desktop) */}
-                    <button
-                        onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-                        className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-white/20 transition-colors text-[#FFA500]"
-                        aria-label="Toggle Theme"
-                    >
-                        {isMounted && theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-                    </button>
+                        REQUEST A QUOTE
+                    </Link>
                 </nav>
 
                 {/* Mobile Menu Controls (Hamburger Only) */}

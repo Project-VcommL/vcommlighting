@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function CasePage() {
     return (
-        <section className="py-16 sm:py-24 bg-transparent text-gray-200">
+        <section className="py-16 sm:py-24 bg-[#08111d] text-gray-200">
             <div className="pt-16 sm:pt-24"> {/* Adjusted top padding */}
 
                 {/* ส่วนหัวของหน้า (Case Collection) */}
