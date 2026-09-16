@@ -11,6 +11,7 @@ import {
   Target,
   Users,
 } from 'lucide-react';
+import TrustClientsSection from '@/components/TrustClientsSection';
 
 const CustomStyles = () => (
   <style>{`
@@ -110,27 +111,13 @@ const ZwimEmblemBadge = () => (
 );
 
 const CertificationsCluster = () => (
-  <div className="flex flex-wrap items-center justify-center md:justify-end gap-5 py-2 px-3">
-    <div className="flex flex-col items-center justify-center text-center">
-      <div className="border border-teal-700 rounded p-1 bg-white shadow-sm flex flex-col items-center w-16 h-12 justify-center">
-        <span className="text-[11px] font-extrabold text-teal-800 tracking-wider">NOA</span>
-        <svg viewBox="0 0 24 14" className="w-7 h-4 text-teal-600 fill-current"><path d="M1 8 L7 13 L22 1" stroke="currentColor" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round" /></svg>
-      </div>
-      <span className="text-[8px] font-bold text-slate-700 mt-1 uppercase leading-tight">ISO 14001<br /><span className="text-[7px] text-slate-500 font-normal">MANAGEMENT<br />CERTIFICATION</span></span>
-    </div>
-    <div className="h-14 w-[1px] bg-slate-300 hidden sm:block"></div>
-    <div className="flex items-center gap-2">
-      <div className="w-10 h-10 border-2 border-amber-600 rotate-45 flex items-center justify-center shadow-xs">
-        <div className="w-6 h-6 border border-amber-600 flex items-center justify-center -rotate-45"><span className="text-[8px] font-black text-amber-700">มอก.</span></div>
-      </div>
-      <div className="flex flex-col items-center">
-        <div className="w-9 h-9 rounded-full border-2 border-blue-900 border-t-red-600 flex items-center justify-center text-[7px] font-bold text-blue-950">TIS</div>
-        <span className="text-[7px] font-bold text-slate-800 mt-0.5 tracking-tighter leading-none">มอก.1955-2551</span>
-        <span className="text-[6.5px] text-slate-500 font-semibold leading-none">TIS 1955-2551</span>
-      </div>
-    </div>
-    <div className="flex flex-col items-center"><div className="w-11 h-11 rounded-full border-2 border-slate-700 flex items-center justify-center p-0.5"><div className="w-full h-full rounded-full border border-slate-400 flex items-center justify-center"><span className="text-[10px] font-extrabold tracking-wider text-slate-800 font-eng">CQC</span></div></div></div>
-    <div className="flex items-center justify-center pl-1"><span className="text-3xl font-eng font-light text-slate-900 tracking-tighter select-none scale-y-110 font-sans">C€</span></div>
+  <div className="flex items-center justify-center py-2 px-3">
+    <img
+      src="/image21/page_022.png"
+      alt="มาตรฐานและการรับรองระดับสากล"
+      className="w-full h-auto object-contain"
+      loading="lazy"
+    />
   </div>
 );
 
@@ -161,7 +148,14 @@ export default function App() {
             </div>
           </div>
           <div className="w-full lg:w-[43%] relative min-h-[320px] sm:min-h-[380px] lg:min-h-full overflow-hidden bg-slate-900 clip-slanted">
-            <div className="w-full h-full min-h-[320px] lg:min-h-[460px]"><ModernFactoryBuildingSVG /></div>
+            <div className="w-full h-full min-h-[320px] lg:min-h-[460px]">
+              <img
+                src="/image21/Gemini_Generated_Image_1qczsc1qczsc1qcz.jpeg"
+                alt="VCOMM Office Building"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
             <div className="absolute inset-0 bg-gradient-to-t from-[#0b1b2f] via-transparent to-transparent opacity-80 pointer-events-none"></div>
             <div className="absolute bottom-5 left-4 right-4 sm:left-6 sm:right-6 lg:left-8 lg:right-6 flex items-center gap-3 bg-navy-dark/90 backdrop-blur-md p-2 sm:p-2.5 rounded-2xl border border-white/20 shadow-2xl"><ZwimEmblemBadge /><div className="flex-1 pr-2"><h4 className="text-white text-xs sm:text-sm md:text-base font-bold leading-tight">พันธมิตรทางธุรกิจ ยาวนาน กว่า 20 ปี</h4><p className="text-sky-200 text-[10px] sm:text-xs font-normal mt-0.5 tracking-wide">ขับเคลื่อนอนาคต ด้วยเทคโนโลยีที่เชื่อถือได้</p></div></div>
           </div>
@@ -193,6 +187,9 @@ export default function App() {
             })}
           </div></div>
         </section>
+
+        {/* ความไว้วางใจจากองค์กรชั้นนำ */}
+        <TrustClientsSection />
       </main>
     </div>
   );

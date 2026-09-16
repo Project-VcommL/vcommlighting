@@ -3,6 +3,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useI18n } from '../hooks/use-i18n';
 import { X } from 'lucide-react';
 
@@ -13,6 +14,7 @@ interface CaseItem {
     title: string;          // e.g., "Project: Factory Lighting Upgrade"
     location?: string;      // e.g., "Amata Nakorn"
     description?: string;   // Short description
+    slug?: string;          // ถ้ามี → เปิดหน้า /case/[slug] แทน modal
 }
 
 const CASE_ITEMS: CaseItem[] = [
@@ -59,15 +61,66 @@ const CASE_ITEMS: CaseItem[] = [
         location: 'Bangkok',
         description: 'Replaced florescent tubes with LED Straight Tube Lamps for 60% energy savings.'
     },
+    {
+        id: 'page-01',
+        slug: 'project-1',
+        imageSrc: '/image21/page_011.png',
+        title: 'Project 1',
+    },
+    {
+        id: 'page-02',
+        slug: 'project-2',
+        imageSrc: '/image21/page_012.png',
+        title: 'Project 2',
+    },
+    {
+        id: 'page-03',
+        slug: 'project-3',
+        imageSrc: '/image21/page_013.png',
+        title: 'Project 3',
+    },
+    {
+        id: 'page-04',
+        slug: 'project-4',
+        imageSrc: '/image21/page_014.png',
+        title: 'Project 4',
+    },
+    {
+        id: 'page-05',
+        slug: 'project-5',
+        imageSrc: '/image21/page_015.png',
+        title: 'Project 5',
+    },
+    {
+        id: 'page-06',
+        slug: 'project-6',
+        imageSrc: '/image21/page_016.png',
+        title: 'Project 6',
+    },
+    {
+        id: 'page-07',
+        slug: 'project-7',
+        imageSrc: '/image21/page_017.png',
+        title: 'Project 7',
+    },
+    {
+        id: 'page-08',
+        slug: 'project-8',
+        imageSrc: '/image21/page_018.png',
+        title: 'Project 8',
+    },
+    {
+        id: 'page-09',
+        slug: 'project-9',
+        imageSrc: '/image21/page_019.png',
+        title: 'Project 9',
+    },
 ];
 
 // *** 2. CaseCard Component ***
 const CaseCard = ({ item, onClick }: { item: CaseItem; onClick: (item: CaseItem) => void }) => {
-    return (
-        <div
-            className="group relative cursor-pointer overflow-hidden rounded-xl border border-white/10 bg-white/5 backdrop-blur-md shadow-lg transition-all hover:-translate-y-1 hover:shadow-2xl hover:bg-white/10"
-            onClick={() => onClick(item)}
-        >
+    const cardContent = (
+        <>
             <div className="relative aspect-video w-full overflow-hidden">
                 <Image
                     src={item.imageSrc}
@@ -92,6 +145,23 @@ const CaseCard = ({ item, onClick }: { item: CaseItem; onClick: (item: CaseItem)
                     </p>
                 )}
             </div>
+        </>
+    );
+
+    const cardClassName =
+        'group relative cursor-pointer overflow-hidden rounded-xl border border-white/10 bg-white/5 backdrop-blur-md shadow-lg transition-all hover:-translate-y-1 hover:shadow-2xl hover:bg-white/10 block';
+
+    if (item.slug) {
+        return (
+            <Link href={`/case/${item.slug}`} className={cardClassName}>
+                {cardContent}
+            </Link>
+        );
+    }
+
+    return (
+        <div className={cardClassName} onClick={() => onClick(item)}>
+            {cardContent}
         </div>
     );
 };

@@ -5,6 +5,9 @@ import HomeHero from '@/components/HomeHero';
 import HomeStatsFooter from '@/components/HomeStatsFooter';
 import InquiryModal from '@/components/InquiryModal';
 import ProductShowcase from '@/components/ProductShowcase';
+import InnovationLanding from '@/components/InnovationLanding';
+import VisionMission from '@/components/VisionMission';
+import ProductsSection from '@/components/ProductsSection';
 
 export default function HomePage() {
     const [modalTitle, setModalTitle] = useState('ติดต่อสอบถามข้อมูล');
@@ -22,6 +25,9 @@ export default function HomePage() {
             <HomeHero onOpenModal={openModal} />
             <HomeStatsFooter />
             <ProductShowcase />
+            <InnovationLanding />
+            <VisionMission />
+            <ProductsSection />
             {isModalOpen && <InquiryModal title={modalTitle} isSubmitted={isSubmitted} onClose={() => setIsModalOpen(false)} onSubmit={() => setIsSubmitted(true)} />}
         </div>
     );

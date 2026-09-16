@@ -1,5 +1,3 @@
-'use client';
-
 import React, { useEffect } from 'react';
 import Image from 'next/image';
 
@@ -153,7 +151,7 @@ export const HeroLeftContent: React.FC = () => (
     }}
   >
     <div className="space-y-4 max-w-2xl">
-      <h1 className="text-lg sm:text-xl md:text-[26px] lg:text-[30px] font-bold leading-[1.3] text-[#122244]">
+      <h1 className="text-2xl sm:text-3xl md:text-[34px] lg:text-[38px] font-bold leading-[1.3] text-[#122244]">
         “ <span className="text-[#102a6b] font-extrabold">VCOMM</span> ยกระดับองค์กรด้วยเทคโนโลยีแสงสว่างอัจฉริยะ
         <br />
         <span className="text-[#102a6b]">ลดต้นทุนพลังงานสูงสุด </span>
@@ -243,7 +241,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="bg-transparent py-6 px-2 sm:px-4 md:px-8 font-['Prompt',sans-serif] text-slate-800 flex flex-col items-center justify-center selection:bg-sky-500 selection:text-white">
+    <div className="min-h-screen bg-slate-200 py-6 px-2 sm:px-4 md:px-8 font-['Prompt',sans-serif] text-slate-800 flex flex-col items-center justify-center selection:bg-sky-500 selection:text-white">
       
       {/* Main Banner Box */}
       <div className="w-full max-w-[1380px] bg-white rounded-3xl shadow-2xl overflow-hidden border border-slate-200 relative transition-all duration-500">
@@ -291,6 +289,11 @@ export default function App() {
           </div>
         </div>
 
+      </div>
+
+      {/* Footer Branding Credit */}
+      <div className="mt-4 text-xs text-slate-500 font-medium text-center">
+        © VCOMM Intelligent Lighting Technology Solutions. All Rights Reserved.
       </div>
 
     </div>
