@@ -92,7 +92,7 @@ export default function InnovationLanding() {
   return (
     <div className="bg-transparent py-6 px-2 sm:px-4 md:px-8 font-['Prompt',sans-serif] text-slate-800 flex justify-center items-center">
       <div className="max-w-[1380px] w-full bg-white rounded-3xl shadow-2xl p-6 sm:p-10 border border-slate-200 text-slate-900">
-        
+
         {/* ================= HEADER SECTION ================= */}
         <header className="mb-8">
           <h1 className="text-3xl sm:text-4xl font-extrabold text-[#0c1e3d] tracking-tight mb-2">
@@ -105,7 +105,7 @@ export default function InnovationLanding() {
 
         {/* ================= 3 INNOVATION CARDS ================= */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-10">
-          
+
           {/* Card 01 */}
           <div className="bg-slate-50/80 rounded-2xl p-5 border border-slate-200/80 shadow-sm flex flex-col justify-between hover:shadow-md transition-all">
             <div>
@@ -133,10 +133,10 @@ export default function InnovationLanding() {
                   </p>
                 </div>
                 <div className="col-span-5 h-36 rounded-xl overflow-hidden border border-slate-200 shadow-inner relative group">
-                  <img 
-                    src={IMAGES.highbay} 
-                    alt="LED Light Distribution" 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" 
+                  <img
+                    src={IMAGES.highbay}
+                    alt="LED Light Distribution"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                 </div>
@@ -172,10 +172,10 @@ export default function InnovationLanding() {
                   </p>
                 </div>
                 <div className="col-span-5 h-36 rounded-xl overflow-hidden border border-slate-200 shadow-inner relative group">
-                  <img 
-                    src={IMAGES.heatsink} 
-                    alt="Heat Dissipation" 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" 
+                  <img
+                    src={IMAGES.heatsink}
+                    alt="Heat Dissipation"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   {/* Airflow overlay graphics */}
                   <div className="absolute inset-0 bg-black/20 flex items-center justify-center pointer-events-none">
@@ -215,10 +215,10 @@ export default function InnovationLanding() {
                   </p>
                 </div>
                 <div className="col-span-5 h-36 rounded-xl overflow-hidden border border-slate-200 shadow-inner relative group">
-                  <img 
-                    src={IMAGES.powerDrive} 
-                    alt="Power Drive" 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" 
+                  <img
+                    src={IMAGES.powerDrive}
+                    alt="Power Drive"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-blue-900/20"></div>
                 </div>
@@ -230,7 +230,7 @@ export default function InnovationLanding() {
 
         {/* ================= SECTION 2: GLOBAL MANUFACTURING & PRESENCE ================= */}
         <section className="bg-[#dcdfe5] rounded-2xl p-6 sm:p-8 mb-8 border border-slate-300/70">
-          
+
           {/* Section Title */}
           <div className="mb-6">
             <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0c1e3d] tracking-tight">
@@ -242,7 +242,7 @@ export default function InnovationLanding() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
-            
+
             {/* Paragraph Text Content Left Side */}
             <div className="lg:col-span-5 bg-slate-100/90 rounded-xl p-5 border border-slate-300/80 flex items-center">
               <p className="text-slate-800 text-xs sm:text-sm leading-relaxed font-normal">
@@ -252,22 +252,25 @@ export default function InnovationLanding() {
 
             {/* Factory Image & Navy Overlay Banner Right Side */}
             <div className="lg:col-span-7 rounded-2xl overflow-hidden relative min-h-[300px] flex flex-col justify-between border border-slate-400/50 shadow-md">
-              
+
               {/* Background Image of Modern Factory */}
               <div className="absolute inset-0 z-0">
-                <img 
-                  src={IMAGES.factory} 
-                  alt="VCOMM Global Manufacturing Factory" 
-                  className="w-full h-full object-cover" 
+                <img
+                  src={IMAGES.factory}
+                  alt="VCOMM Global Manufacturing Factory"
+                  className="w-full h-full object-cover"
                 />
-                
+
                 {/* World map graphic watermark & logo badge overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-black/30"></div>
-                
+
                 {/* VCOMM Logo on building */}
-                <div className="absolute top-8 left-1/2 -translate-x-1/2 sm:left-12 sm:translate-x-0 bg-white/95 px-4 py-1.5 rounded-md shadow-lg border border-slate-300 flex items-center gap-1.5">
-                  <span className="text-[#0c1e3d] font-black tracking-widest text-lg">V</span>
-                  <span className="text-cyan-600 font-black tracking-widest text-lg">COMM</span>
+                <div className="absolute top-8 left-1/2 -translate-x-1/2 sm:left-12 sm:translate-x-0 bg-white/95 px-2 py-1 rounded-md shadow-lg border border-slate-300 flex items-center">
+                  <img
+                    src="/logos/1789656248083.jpg"
+                    alt="VCOMM Logo"
+                    className="h-8 w-auto object-contain"
+                  />
                 </div>
               </div>
 
@@ -277,7 +280,7 @@ export default function InnovationLanding() {
               {/* Dark Navy Blue Grid Overlay Banner */}
               <div className="relative z-10 bg-[#0c1e3d]/95 backdrop-blur-md text-white p-4 sm:p-5 border-t border-slate-700/50">
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
-                  
+
                   {/* Feature 1 */}
                   <div className="flex flex-col items-center space-y-2">
                     <div className="w-12 h-12 rounded-full border border-slate-400/50 bg-slate-800/60 flex items-center justify-center shrink-0">
@@ -329,7 +332,7 @@ export default function InnovationLanding() {
         {/* ================= FOOTER ICON BAR ================= */}
         <footer className="pt-4 border-t border-slate-200">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 items-center">
-            
+
             {/* Footer Item 1 */}
             <div className="flex items-center gap-3">
               <div className="w-11 h-11 rounded-full bg-[#0c1e3d] flex items-center justify-center shrink-0 shadow-sm">

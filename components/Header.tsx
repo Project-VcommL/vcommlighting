@@ -56,11 +56,11 @@ export default function Header({ isMenuOpen, toggleMenu }: HeaderProps) {
                 {/* โลโก้ */}
                 <Link href="/" onClick={() => isMenuOpen && toggleMenu()}>
                     <Image
-                        src="/1000047467-removebg-preview.png"
+                        src="/logos/1789656248083.jpg"
                         alt="โลโก้ Vcommlighting"
                         width={150}
                         height={40}
-                        className="h-10 w-auto invert dark:invert-0"
+                        className="h-10 w-auto invert dark:invert-0 rounded-lg"
                         priority
                     />
                 </Link>
